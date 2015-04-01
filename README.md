@@ -2,10 +2,12 @@
 Simple todo List
 
 This is the README.md file for the SimpleTodoList project.
+
 This program enables a user to:
-1. add items to a list
-2. edit items in the list with a short click
-3. delete items in the list with a long click
+
+ 1. add items to a list/n
+ 2. edit items in the list with a short click\n
+ 3. delete items in the list with a long click
 
 A GIF video (made with LiceCap) is shown below with the user stories:
 

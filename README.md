@@ -8,7 +8,7 @@ This program enables a user to:
  2. edit items in the list with a short click
  3. delete items in the list with a long click
 
-A GIF video (made with LiceCap) is shown below with the user stories:
+A GIF video (made with **LiceCap**) is shown below with the user stories:
 
 ![My Video Walkthrough](SimpleTodoList1video1.gif)
 

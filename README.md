@@ -8,6 +8,7 @@ This program enables a user to:
 3. delete items in the list with a long click
 
 A GIF video is shown below with the user stories:
+
 ![My image]
 (https://github.com/marknic8github1/SimpleTodoList/blob/master/SimpleTodoList1video1.gif)
 

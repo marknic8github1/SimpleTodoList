@@ -154,6 +154,8 @@ public class TodoActivity extends ActionBarActivity {
 
             //String position1result = items.put(position);
             saveItems(); // write to file
+
+            //setContentView(R.layout.activity_todo);
         }
     }
 }

@@ -10,9 +10,9 @@ This program enables a user to:
 
 A GIF video (made with **LiceCap**) is shown below with the user stories:
 
-![My Video Walkthrough](SimpleTodoList1video1.gif)
+![My Video Walkthrough](SimpleTodoList1video2.gif)
 
-https://github.com/marknic8github1/SimpleTodoList/blob/master/SimpleTodoList1video1.gif
+https://github.com/marknic8github1/SimpleTodoList/blob/master/SimpleTodoList1video2.gif
 
 There are some suggested added capabilities that can be added to make this app more robust.  
 Last README.md update on April 1, 2015 at 1:35PM Pacific time.  

@@ -97,6 +97,7 @@ public class TodoActivity extends ActionBarActivity {
         }
     }
     private void saveItems() {
+        //itemsAdapter.notifyDataSetChanged();
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {
@@ -155,7 +156,12 @@ public class TodoActivity extends ActionBarActivity {
             //String position1result = items.put(position);
             saveItems(); // write to file
 
-            //setContentView(R.layout.activity_todo);
+            //View v1 = findViewById (R.id.lvItems); // attempt to get emulator to show Edit
+            //v1.invalidate(); // attempt to get emulator to show Edit
+            //v1 = setContentView(R.layout.activity_todo);// attempt to get emulator to show Edit
+           //v1.layout.activity_todo.invalidate();// attempt to get emulator to show Edit
+            itemsAdapter.notifyDataSetChanged(); // attempt to get emulator to show Edit
+            return;
         }
     }
 }

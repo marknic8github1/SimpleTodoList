@@ -124,7 +124,7 @@ public class TodoActivity extends ActionBarActivity {
                 //startActivity(i); // brings up the second activity
                 startActivityForResult(i, REQUEST_CODE); // brings up the second activity to get a result
 
-                return;
+                //return; // return unnecessary on a void method
             }
         });
     }

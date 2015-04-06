@@ -26,8 +26,8 @@ public class EditItemActivity extends ActionBarActivity {
         EditText etEditItem = (EditText) findViewById(R.id.editView);
         etEditItem.setText(position); // sets edit box to selected text
         // Now put curser at end of text
-        int positionOfCurser = position.length();
-        etEditItem.setSelection(positionOfCurser); // puts curser at end of text
+        int positionOfCursor = position.length();
+        etEditItem.setSelection(positionOfCursor); // puts cursor at end of text
     }
 
     @Override

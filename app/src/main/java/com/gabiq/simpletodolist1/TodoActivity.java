@@ -88,7 +88,7 @@ public class TodoActivity extends ActionBarActivity {
                                            View view, int position, long rowId) {
 
                 verifyDelete(); // to confirm deletion
-                if (confirmDelete == true) {
+                if (confirmDelete) { // if (confirmDelete == true)
                     items.remove(position);
                     itemsAdapter.notifyDataSetChanged();
                     saveItems(); // write to file
@@ -109,16 +109,20 @@ public class TodoActivity extends ActionBarActivity {
                 .setMessage("Click Yes to Delete.")
                 .setCancelable(false)
                 .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    //@Override
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, then delete item
                         confirmDelete = true;
                         //dialog.cancel();
+                        dialog.dismiss();
                     }
                 })
                 .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    //@Override
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, do not delete item
                         confirmDelete = false;
+                        dialog.dismiss();
                     }
                 });
         // create alert dialog

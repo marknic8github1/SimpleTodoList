@@ -3,6 +3,7 @@ package com.gabiq.simpletodolist1;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -25,7 +26,7 @@ public class TodoActivity extends ActionBarActivity {
     ListView lvItems;
     ArrayList<String> items;
     ArrayAdapter<String> itemsAdapter;
-    boolean confirmDelete; // variable to hold confirm deletion decision
+    boolean confirmDelete = false; // variable to hold confirm deletion decision
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +69,17 @@ public class TodoActivity extends ActionBarActivity {
             Toast.makeText(this, "You selected Version!", Toast.LENGTH_SHORT).show(); // testing, works!
             return true;
         }
+        if (id == R.id.change_Background_Color) {
+            change_Background_Color();
+            return true;
+        }
 
     return super.onOptionsItemSelected(item);
+    }
+
+    private void change_Background_Color() {
+        int color = Color.argb(255, 128, 128, 128);
+        lvItems.setBackgroundColor(color);
     }
 
 // Below method might be edited since adding Save items
@@ -94,12 +104,13 @@ public class TodoActivity extends ActionBarActivity {
                     saveItems(); // write to file
                 }
                 //confirmDelete = false;
+                itemsAdapter.notifyDataSetChanged();
                 return true;
             }
         });
     }
 
-    public void verifyDelete() {
+    public boolean verifyDelete() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this); //context
         // set dialog title
@@ -129,6 +140,7 @@ public class TodoActivity extends ActionBarActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         // show dialog
         alertDialog.show();
+    return confirmDelete;
     }
 
     //These two methods will add the ability to load/save from files!

@@ -1,6 +1,7 @@
 package com.gabiq.simpletodolist1;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 public class EditItemActivity extends ActionBarActivity {
 
     long rowId = 0; // placed here so visible in onCreate and onEditItem
+    //EditText etEditItem = (EditText) findViewById(R.id.editView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +55,18 @@ public class EditItemActivity extends ActionBarActivity {
             Toast.makeText(this, "You selected Version!", Toast.LENGTH_SHORT).show(); // testing, works!
             return true;
         }
-
+        if (id == R.id.change_Background_Color) {
+            change_Background_Color();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    private void change_Background_Color() {
+        int color = Color.argb(255, 182, 182, 182);
+        EditText etEditItem = (EditText) findViewById(R.id.editView);
+        etEditItem.setBackgroundColor(color);
+    }
     // Send data back to first activity from second activity
     public void onEditItem(View v) { // hitting the Save button here
     //    EditText etNewItem = (EditText) findViewById(R.id.etNewItem);

@@ -14,7 +14,7 @@ A GIF video (made with **LiceCap**) is shown below with the user stories:
 
 https://github.com/marknic8github1/SimpleTodoList/blob/master/SimpleTodoList1video2.gif
 
-There are some suggested added capabilities that can be added to make this app more robust.
+There are some suggested added capabilities that can be added to make this app more robust.  
 Added settings menu items to both screens.
 
 Last README.md update on April 9, 2015 at 10:42PM Pacific time.  

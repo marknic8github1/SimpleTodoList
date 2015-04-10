@@ -46,6 +46,11 @@ public class EditItemActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "You selected Settings!", Toast.LENGTH_SHORT).show(); // testing, works!
+            return true;
+        }
+        if (id == R.id.action_settings2) {
+            Toast.makeText(this, "You selected Version!", Toast.LENGTH_SHORT).show(); // testing, works!
             return true;
         }
 

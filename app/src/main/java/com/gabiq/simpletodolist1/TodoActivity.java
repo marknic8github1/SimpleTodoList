@@ -58,8 +58,14 @@ public class TodoActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "You selected Settings!", Toast.LENGTH_SHORT).show(); // testing, works!
             return true;
         }
+        if (id == R.id.action_settings2) {
+            Toast.makeText(this, "You selected Version!", Toast.LENGTH_SHORT).show(); // testing, works!
+            return true;
+        }
+
     return super.onOptionsItemSelected(item);
     }
 
@@ -161,7 +167,7 @@ public class TodoActivity extends ActionBarActivity {
             //v1 = setContentView(R.layout.activity_todo);// attempt to get emulator to show Edit
            //v1.layout.activity_todo.invalidate();// attempt to get emulator to show Edit
             itemsAdapter.notifyDataSetChanged(); // attempt to get emulator to show Edit
-            return;
+            //return; // return unnecessary in a void method
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.gabiq.simpletodolist1;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -23,6 +25,7 @@ public class TodoActivity extends ActionBarActivity {
     ListView lvItems;
     ArrayList<String> items;
     ArrayAdapter<String> itemsAdapter;
+    boolean confirmDelete; // variable to hold confirm deletion decision
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,12 +86,45 @@ public class TodoActivity extends ActionBarActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent,
                                            View view, int position, long rowId) {
-                items.remove(position);
-                itemsAdapter.notifyDataSetChanged();
-                saveItems(); // write to file
+
+                verifyDelete(); // to confirm deletion
+                if (confirmDelete == true) {
+                    items.remove(position);
+                    itemsAdapter.notifyDataSetChanged();
+                    saveItems(); // write to file
+                }
+                //confirmDelete = false;
                 return true;
             }
         });
+    }
+
+    public void verifyDelete() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this); //context
+        // set dialog title
+        alertDialogBuilder.setTitle("Confirm Delete?");
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("Click Yes to Delete.")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, then delete item
+                        confirmDelete = true;
+                        //dialog.cancel();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, do not delete item
+                        confirmDelete = false;
+                    }
+                });
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        // show dialog
+        alertDialog.show();
     }
 
     //These two methods will add the ability to load/save from files!
